@@ -17,6 +17,7 @@ In addition to the database design, a fully functional website, ‘HustleUp,’ 
 - Role-based access control (Students cannot access teacher features)
 
 <h3>Student Features</h3>
+
 | Feature | Description |
 | :--- | :--- |
 | **Profile Dashboard** | View personal details, CGPA, department, semester |
@@ -25,6 +26,7 @@ In addition to the database design, a fully functional website, ‘HustleUp,’ 
 | **Enrollment** | Join sections with one-click |
 
 <h3>Teacher Features</h3>
+
 | Feature | Description |
 | :--- | :--- |
 | **Section Creation** | Create new sections with schedule and project details |
@@ -33,6 +35,7 @@ In addition to the database design, a fully functional website, ‘HustleUp,’ 
 | **Audit Log** | View section exit logs (automatically maintained by trigger) |
 
 <h3>Dashboards</h3>
+
 | Dashboard | Content |
 | :--- | :--- |
 | **Home Page** | Campus statistics (student count, mentors, sections, completions) |
@@ -52,6 +55,7 @@ In addition to the database design, a fully functional website, ‘HustleUp,’ 
 
 
 <h2>📁 Project Structure</h2>
+
 hustleup/
 │
 ├── src/
@@ -152,69 +156,69 @@ Open your browser and visit: http://localhost/hustleup/index.php
 
 <h2>💼 Commercialization Pathway</h2>
 <h3>Phase 1: Core Enterprise Features</h3>
-MySQL InnoDB Cluster – Replace single-instance MySQL with a high-availability cluster using Group Replication and MySQL Router for automatic failover and read/write splitting.
+- MySQL InnoDB Cluster – Replace single-instance MySQL with a high-availability cluster using Group Replication and MySQL Router for automatic failover and read/write splitting.
 
-Automated Backups – Schedule full and incremental backups using Percona XtraBackup with S3 object storage retention.
+- Automated Backups – Schedule full and incremental backups using Percona XtraBackup with S3 object storage retention.
 
-Point-in-Time Recovery – Enable binary logging with retention to support restoration to any specific point in time.
+- Point-in-Time Recovery – Enable binary logging with retention to support restoration to any specific point in time.
 
-Admin Dashboard – Develop a comprehensive admin panel for user management, platform analytics, and system monitoring.
+- Admin Dashboard – Develop a comprehensive admin panel for user management, platform analytics, and system monitoring.
 
-Email Notification System – Implement automated email alerts for enrollment, graduation, drops, and password reset using PHPMailer or SendGrid.
+- Email Notification System – Implement automated email alerts for enrollment, graduation, drops, and password reset using PHPMailer or SendGrid.
 
-PDF Certificate Generation – Generate downloadable PDF certificates with student name, skill learnt, completion date, and mentor signature.
+- PDF Certificate Generation – Generate downloadable PDF certificates with student name, skill learnt, completion date, and mentor signature.
 
-Profile Editing & User Management – Allow students and teachers to update passwords, contact numbers, and CGPA; enable admin-level user suspension and role changes.
+- Profile Editing & User Management – Allow students and teachers to update passwords, contact numbers, and CGPA; enable admin-level user suspension and role changes.
 
-Capacity & Waitlist System – Add capacity to sections and enforce automatic enrollment closure; create a waitlist table for automatic enrollment when seats become available.
+- Capacity & Waitlist System – Add capacity to sections and enforce automatic enrollment closure; create a waitlist table for automatic enrollment when seats become available.
 
-Normalize schedule_time – Replace free-text schedule with a child table storing day and start time in separate typed columns to enable queries like "sections meeting on Tuesday".
+- Normalize schedule_time – Replace free-text schedule with a child table storing day and start time in separate typed columns to enable queries like "sections meeting on Tuesday".
 
-Replace estimated_learning_days with Actual Dates – Add section_start_date and section_end_date to enable automatic completion and queries like "sections starting next week".
+- Replace estimated_learning_days with Actual Dates – Add section_start_date and section_end_date to enable automatic completion and queries like "sections starting next week".
 
-Add reason Column to removal_logs – Distinguish between mentor-initiated drops and graduation departures for clearer audit trails.
+- Add reason Column to removal_logs – Distinguish between mentor-initiated drops and graduation departures for clearer audit trails.
 
-Soft Deletes – Add is_active or deleted_at to key tables (students, sections, teachers) to preserve historical data and allow recovery of accidentally removed records.
+- Soft Deletes – Add is_active or deleted_at to key tables (students, sections, teachers) to preserve historical data and allow recovery of accidentally removed records.
 
 <h3>hase 2: Advanced Features</h3>
-Ratings & Reviews System – Allow learners to rate completed sections and display average ratings in the advising portal to guide future students.
+- Ratings & Reviews System – Allow learners to rate completed sections and display average ratings in the advising portal to guide future students.
 
-Achievements & Gamification – Award badges like "Top Performer", "Skill Master", and "Community Leader" based on student activity and completions.
+- Achievements & Gamification – Award badges like "Top Performer", "Skill Master", and "Community Leader" based on student activity and completions.
 
-Discussion Forums per Section – Create forum_posts and forum_replies tables for section-based student-teacher interaction.
+- Discussion Forums per Section – Create forum_posts and forum_replies tables for section-based student-teacher interaction.
 
-Peer-to-Peer Mentoring – Enable students to request 1-on-1 mentoring sessions with teachers outside of section hours.
+- Peer-to-Peer Mentoring – Enable students to request 1-on-1 mentoring sessions with teachers outside of section hours.
 
-Student Recommendations Engine – Recommend related skills based on completed courses (e.g., "You learned Python, try Web Development next").
+- Student Recommendations Engine – Recommend related skills based on completed courses (e.g., "You learned Python, try Web Development next").
 
-Learning Analytics Dashboard – Provide teachers with visual analytics on enrollment trends, completion rates, and student performance.
+- Learning Analytics Dashboard – Provide teachers with visual analytics on enrollment trends, completion rates, and student performance.
 
-Student Progress Reports – Generate individual reports showing completed skills, ongoing sections, and CGPA trends over time.
+- Student Progress Reports – Generate individual reports showing completed skills, ongoing sections, and CGPA trends over time.
 
-Export Functionality – Allow teachers and admins to export student rosters and completion records as CSV or PDF.
+- Export Functionality – Allow teachers and admins to export student rosters and completion records as CSV or PDF.
 
-Bulk Operations – Enable teachers to drop multiple students or graduate all eligible students with a single action.
+- Bulk Operations – Enable teachers to drop multiple students or graduate all eligible students with a single action.
 
 <h3>Phase 3: Scalability & Enterprise Expansion</h3>
-Multi-Institution Support – Add an institutions table to support multiple universities or campuses with isolated data, separate administrators, and custom branding.
+- Multi-Institution Support – Add an institutions table to support multiple universities or campuses with isolated data, separate administrators, and custom branding.
 
-RESTful API Development – Build a RESTful API using PHP for mobile app development, third-party integrations, and external analytics tools.
+- RESTful API Development – Build a RESTful API using PHP for mobile app development, third-party integrations, and external analytics tools.
 
-Single Sign-On (SSO) Integration – Integrate with university authentication systems via OAuth 2.0, LDAP, or SAML for seamless login.
+- Single Sign-On (SSO) Integration – Integrate with university authentication systems via OAuth 2.0, LDAP, or SAML for seamless login.
 
-Mobile Application Development – Develop Android and iOS applications using React Native or Flutter for student bookings and notifications.
+- Mobile Application Development – Develop Android and iOS applications using React Native or Flutter for student bookings and notifications.
 
-Payment Gateway Integration – Integrate with Stripe/PayPal for paid courses, subscription plans, and certificate fees.
+- Payment Gateway Integration – Integrate with Stripe/PayPal for paid courses, subscription plans, and certificate fees.
 
-SaaS Subscription Model – Implement tiered pricing (Free, Pro, Enterprise) with premium features like advanced analytics, custom branding, and dedicated support.
+- SaaS Subscription Model – Implement tiered pricing (Free, Pro, Enterprise) with premium features like advanced analytics, custom branding, and dedicated support.
 
-White-label Solution – Allow institutions to customize branding, logos, and color schemes for their platform instance.
+- White-label Solution – Allow institutions to customize branding, logos, and color schemes for their platform instance.
 
-Internationalization – Add multi-language and multi-currency support for global market expansion.
+- Internationalization – Add multi-language and multi-currency support for global market expansion.
 
-Disaster Recovery (DR) – Deploy InnoDB ClusterSet with primary and replica clusters in alternate geographic locations for automated failover and business continuity.
+- Disaster Recovery (DR) – Deploy InnoDB ClusterSet with primary and replica clusters in alternate geographic locations for automated failover and business continuity.
 
-Elasticsearch Integration – Replace basic SQL search with Elasticsearch for fuzzy matching, autocomplete, and advanced search capabilities.
+- Elasticsearch Integration – Replace basic SQL search with Elasticsearch for fuzzy matching, autocomplete, and advanced search capabilities.
 
 <h2>📊 Monetization Strategy</h2>
 - Commission per Enrollment – Percentage of revenue from paid course enrollments.
@@ -230,6 +234,7 @@ Elasticsearch Integration – Replace basic SQL search with Elasticsearch for fu
 - API Access – Monthly fees for third-party API access and integrations.
 
 <h2>📈 Market Expansion Roadmap</h2>
+
 - Phase 1 – Pilot deployment on 1 campus with 500 users; core enterprise features implemented.
 
 - Phase 2 – Campus rollout to 5 campuses with 2,500 users; mobile app and API launched.
