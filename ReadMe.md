@@ -10,13 +10,13 @@ In addition to the database design, a fully functional website, ‘HustleUp,’ 
 
 <h2>✨ Core Features</h2>
 
- Authentication & Authorization
+ ###Authentication & Authorization
 - Secure user registration with **password hashing** (bcrypt)
 - Login with role selection (Student / Teacher)
 - Session-based authentication with flash messages
 - Role-based access control (Students cannot access teacher features)
 
-Student Features
+###Student Features
 | Feature | Description |
 | :--- | :--- |
 | **Profile Dashboard** | View personal details, CGPA, department, semester |
@@ -24,7 +24,7 @@ Student Features
 | **Advising Portal** | Search and filter available sections |
 | **Enrollment** | Join sections with one-click |
 
-Teacher Features
+###Teacher Features
 | Feature | Description |
 | :--- | :--- |
 | **Section Creation** | Create new sections with schedule and project details |
@@ -32,7 +32,7 @@ Teacher Features
 | **Graduation** | Complete sections and automatically graduate students |
 | **Audit Log** | View section exit logs (automatically maintained by trigger) |
 
-Dashboards
+###Dashboards
 | Dashboard | Content |
 | :--- | :--- |
 | **Home Page** | Campus statistics (student count, mentors, sections, completions) |
@@ -65,28 +65,29 @@ hustleup/
 │ ├── 04_user_privileges.sql # User & privilege creation
 
 <h2>📋 Relational Schema</h2>
-students ( campus_id, name, city, department, cgpa, semester, password_hash )
+students ( campus_id, name, city, department, cgpa, semester, password_hash )  
 
-courses ( course_id, course_name )
+courses ( course_id, course_name )  
 
-teachers ( teacher_id, campus_id, name, teaching_skill, semester, contact_number, qualification )
-campus_id → students (campus_id)
+teachers ( teacher_id, campus_id, name, teaching_skill, semester, contact_number, qualification )  
 
-sections ( section_id, section_name, course_id, teacher_campus_id, schedule_time, estimated_learning_days, number_of_projects )
-course_id → courses (course_id)
-teacher_campus_id → teachers (campus_id)
+campus_id → students (campus_id)  
 
-registrations ( registration_id, student_campus_id, section_id )
-student_campus_id → students (campus_id)
-section_id → sections (section_id)
+sections ( section_id, section_name, course_id, teacher_campus_id, schedule_time, estimated_learning_days, number_of_projects )  
+course_id → courses (course_id)  
+teacher_campus_id → teachers (campus_id)  
 
-completed_courses ( completion_id, student_campus_id, section_id, skill_learnt, completion_date )
-student_campus_id → students (campus_id)
-section_id → sections (section_id)
+registrations ( registration_id, student_campus_id, section_id )  
+student_campus_id → students (campus_id)  
+section_id → sections (section_id)  
 
-removal_logs ( log_id, student_campus_id, section_id, removed_at )
-student_campus_id → students (campus_id)
-section_id → sections (section_id)
+completed_courses ( completion_id, student_campus_id, section_id, skill_learnt, completion_date )  
+student_campus_id → students (campus_id)  
+section_id → sections (section_id)  
+
+removal_logs ( log_id, student_campus_id, section_id, removed_at )  
+student_campus_id → students (campus_id)  
+section_id → sections (section_id)  
 
 
 <h2>📊 Normalization Status</h2>
@@ -104,7 +105,7 @@ section_id → sections (section_id)
 
 <h2>🚀 Getting Started</h2>
 
-Prerequisites
+###Prerequisites
 
 - PHP 7.4 or higher (with MySQLi extension enabled)
 - MySQL 5.7 or higher
@@ -112,15 +113,15 @@ Prerequisites
 - Git (for cloning)
 
 
-Installation & Setup
+###Installation & Setup
 
-Step 1: Clone the repository
+####Step 1: Clone the repository
 
 ```bash
 git clone https://github.com/your-username/hustleup.git
 cd hustleup
 ```
-Step 2: Set up the database
+####Step 2: Set up the database
 Start XAMPP and enable Apache and MySQL.
 
 Open your browser and go to http://localhost/phpmyadmin.
@@ -134,7 +135,7 @@ Go to the Import tab and import the SQL files in the following order:
 04)_user_privileges.sql # User & privilege creation
 05)_hustleup_db_dump.sql # Complete database dump
 
-Step 3: Configure the application
+####Step 3: Configure the application
 Open db.php and ensure the credentials match your local setup:
 
 define('DB_HOST', 'localhost');
@@ -142,15 +143,15 @@ define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'hustleup_db');
 
-Step 4: Run the application
+####Step 4: Run the application
 Move the project folder to C:\xampp\htdocs\ (Windows) or /Applications/XAMPP/htdocs/ (Mac).
 
 Open your browser and visit: http://localhost/hustleup/index.php
 
-Step 5: Login with demo credentials
+####Step 5: Login with demo credentials
 
 <h2>💼 Commercialization Pathway</h2>
-Phase 1: Core Enterprise Features
+###Phase 1: Core Enterprise Features
 MySQL InnoDB Cluster – Replace single-instance MySQL with a high-availability cluster using Group Replication and MySQL Router for automatic failover and read/write splitting.
 
 Automated Backups – Schedule full and incremental backups using Percona XtraBackup with S3 object storage retention.
@@ -175,7 +176,7 @@ Add reason Column to removal_logs – Distinguish between mentor-initiated drops
 
 Soft Deletes – Add is_active or deleted_at to key tables (students, sections, teachers) to preserve historical data and allow recovery of accidentally removed records.
 
-Phase 2: Advanced Features
+###Phase 2: Advanced Features
 Ratings & Reviews System – Allow learners to rate completed sections and display average ratings in the advising portal to guide future students.
 
 Achievements & Gamification – Award badges like "Top Performer", "Skill Master", and "Community Leader" based on student activity and completions.
@@ -194,7 +195,7 @@ Export Functionality – Allow teachers and admins to export student rosters and
 
 Bulk Operations – Enable teachers to drop multiple students or graduate all eligible students with a single action.
 
-Phase 3: Scalability & Enterprise Expansion
+###Phase 3: Scalability & Enterprise Expansion
 Multi-Institution Support – Add an institutions table to support multiple universities or campuses with isolated data, separate administrators, and custom branding.
 
 RESTful API Development – Build a RESTful API using PHP for mobile app development, third-party integrations, and external analytics tools.
@@ -229,11 +230,11 @@ White-label Licensing – One-time licensing fee for custom-branded deployments.
 API Access – Monthly fees for third-party API access and integrations.
 
 <h2>📈 Market Expansion Roadmap</h2>
-Phase 1 – Pilot deployment on 1 campus with 500 users; core enterprise features implemented.
+- Phase 1 – Pilot deployment on 1 campus with 500 users; core enterprise features implemented.
 
-Phase 2 – Campus rollout to 5 campuses with 2,500 users; mobile app and API launched.
+- Phase 2 – Campus rollout to 5 campuses with 2,500 users; mobile app and API launched.
 
-Phase 3 – National expansion to 25 campuses with 15,000 users; AI-driven analytics and gamification enabled.
+- Phase 3 – National expansion to 25 campuses with 15,000 users; AI-driven analytics and gamification enabled.
 
 Phase 4 – Global market entry with 100+ campuses and 100,000+ users; multi-language and multi-currency support.
 
