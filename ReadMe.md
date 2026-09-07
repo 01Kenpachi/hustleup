@@ -11,10 +11,12 @@ In addition to the database design, a fully functional website, ‘HustleUp,’ 
 <h2>✨ Core Features</h2>
 
  <h3>Authentication & Authorization</h3>
+ 
 - Secure user registration with **password hashing** (bcrypt)
-- Login with role selection (Student / Teacher)
-- Session-based authentication with flash messages
-- Role-based access control (Students cannot access teacher features)
+  
+- Login with role selection (Student / Teacher)  
+- Session-based authentication with flash messages  
+- Role-based access control (Students cannot access teacher features)  
 
 <h3>Student Features</h3>
 
@@ -57,16 +59,14 @@ In addition to the database design, a fully functional website, ‘HustleUp,’ 
 <h2>📁 Project Structure</h2>
 
 hustleup/
-│
-├── src/
-│ ├── db.php # Database connection & helper functions
-│ └── index.php # Main application entry point (UI + Logic)
-│
-├── sql/
-│ ├── 01_create_tables.sql # Table creation scripts
-│ ├── 02_insert_data.sql # Sample data insertion
-│ ├── 03_create_views.sql # View creation
-│ ├── 04_user_privileges.sql # User & privilege creation
+- src/
+  - db.php # Database connection & helper functions
+  - index.php # Main application entry point (UI + Logic)│
+- sql/
+  - 01_create_tables.sql # Table creation scripts
+  - 02_insert_data.sql # Sample data insertion
+  - 03_create_views.sql # View creation
+  - 04_user_privileges.sql # User & privilege creation
 
 <h2>📋 Relational Schema</h2>
 students ( campus_id, name, city, department, cgpa, semester, password_hash )  
@@ -133,19 +133,30 @@ Open your browser and go to http://localhost/phpmyadmin.
 Create a new database named hustleup_db.
 
 Go to the Import tab and import the SQL files in the following order:
+
 01)_create_tables.sql # Table creation scripts
+
 02)_insert_data.sql # Sample data insertion
+
 03)_create_views.sql # View creation
+
 04)_user_privileges.sql # User & privilege creation
+
 05)_hustleup_db_dump.sql # Complete database dump
+
 
 <h4>Step 3: Configure the application</h4>
 Open db.php and ensure the credentials match your local setup:
 
 define('DB_HOST', 'localhost');
+
 define('DB_USER', 'root');
+
 define('DB_PASS', '');
+
 define('DB_NAME', 'hustleup_db');
+
+
 
 <h4>Step 4: Run the application</h4>
 Move the project folder to C:\xampp\htdocs\ (Windows) or /Applications/XAMPP/htdocs/ (Mac).
@@ -156,6 +167,7 @@ Open your browser and visit: http://localhost/hustleup/index.php
 
 <h2>💼 Commercialization Pathway</h2>
 <h3>Phase 1: Core Enterprise Features</h3>
+
 - MySQL InnoDB Cluster – Replace single-instance MySQL with a high-availability cluster using Group Replication and MySQL Router for automatic failover and read/write splitting.
 
 - Automated Backups – Schedule full and incremental backups using Percona XtraBackup with S3 object storage retention.
@@ -181,6 +193,7 @@ Open your browser and visit: http://localhost/hustleup/index.php
 - Soft Deletes – Add is_active or deleted_at to key tables (students, sections, teachers) to preserve historical data and allow recovery of accidentally removed records.
 
 <h3>hase 2: Advanced Features</h3>
+
 - Ratings & Reviews System – Allow learners to rate completed sections and display average ratings in the advising portal to guide future students.
 
 - Achievements & Gamification – Award badges like "Top Performer", "Skill Master", and "Community Leader" based on student activity and completions.
@@ -200,6 +213,7 @@ Open your browser and visit: http://localhost/hustleup/index.php
 - Bulk Operations – Enable teachers to drop multiple students or graduate all eligible students with a single action.
 
 <h3>Phase 3: Scalability & Enterprise Expansion</h3>
+
 - Multi-Institution Support – Add an institutions table to support multiple universities or campuses with isolated data, separate administrators, and custom branding.
 
 - RESTful API Development – Build a RESTful API using PHP for mobile app development, third-party integrations, and external analytics tools.
@@ -221,6 +235,7 @@ Open your browser and visit: http://localhost/hustleup/index.php
 - Elasticsearch Integration – Replace basic SQL search with Elasticsearch for fuzzy matching, autocomplete, and advanced search capabilities.
 
 <h2>📊 Monetization Strategy</h2>
+
 - Commission per Enrollment – Percentage of revenue from paid course enrollments.
 
 - SaaS Subscription Plans – Monthly/yearly fees for institutions (Free, Pro, Enterprise tiers).
