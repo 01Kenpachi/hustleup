@@ -10,13 +10,13 @@ In addition to the database design, a fully functional website, ‘HustleUp,’ 
 
 <h2>✨ Core Features</h2>
 
- ###Authentication & Authorization
+ <h3>Authentication & Authorization</h3>
 - Secure user registration with **password hashing** (bcrypt)
 - Login with role selection (Student / Teacher)
 - Session-based authentication with flash messages
 - Role-based access control (Students cannot access teacher features)
 
-###Student Features
+<h3>Student Features</h3>
 | Feature | Description |
 | :--- | :--- |
 | **Profile Dashboard** | View personal details, CGPA, department, semester |
@@ -24,7 +24,7 @@ In addition to the database design, a fully functional website, ‘HustleUp,’ 
 | **Advising Portal** | Search and filter available sections |
 | **Enrollment** | Join sections with one-click |
 
-###Teacher Features
+<h3>Teacher Features</h3>
 | Feature | Description |
 | :--- | :--- |
 | **Section Creation** | Create new sections with schedule and project details |
@@ -32,7 +32,7 @@ In addition to the database design, a fully functional website, ‘HustleUp,’ 
 | **Graduation** | Complete sections and automatically graduate students |
 | **Audit Log** | View section exit logs (automatically maintained by trigger) |
 
-###Dashboards
+<h3>Dashboards</h3>
 | Dashboard | Content |
 | :--- | :--- |
 | **Home Page** | Campus statistics (student count, mentors, sections, completions) |
@@ -105,7 +105,7 @@ section_id → sections (section_id)
 
 <h2>🚀 Getting Started</h2>
 
-###Prerequisites
+<h3>Prerequisites</h3>
 
 - PHP 7.4 or higher (with MySQLi extension enabled)
 - MySQL 5.7 or higher
@@ -113,15 +113,15 @@ section_id → sections (section_id)
 - Git (for cloning)
 
 
-###Installation & Setup
+<h3>Installation & Setup</h3>
 
-####Step 1: Clone the repository
+<h4>Step 1: Clone the repository</h4>
 
 ```bash
 git clone https://github.com/your-username/hustleup.git
 cd hustleup
 ```
-####Step 2: Set up the database
+<h4>Step 2: Set up the database</h4>
 Start XAMPP and enable Apache and MySQL.
 
 Open your browser and go to http://localhost/phpmyadmin.
@@ -135,7 +135,7 @@ Go to the Import tab and import the SQL files in the following order:
 04)_user_privileges.sql # User & privilege creation
 05)_hustleup_db_dump.sql # Complete database dump
 
-####Step 3: Configure the application
+<h4>Step 3: Configure the application</h4>
 Open db.php and ensure the credentials match your local setup:
 
 define('DB_HOST', 'localhost');
@@ -143,15 +143,15 @@ define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'hustleup_db');
 
-####Step 4: Run the application
+<h4>Step 4: Run the application</h4>
 Move the project folder to C:\xampp\htdocs\ (Windows) or /Applications/XAMPP/htdocs/ (Mac).
 
 Open your browser and visit: http://localhost/hustleup/index.php
 
-####Step 5: Login with demo credentials
+<h4>Step 5: Login with demo credentials</h4>
 
 <h2>💼 Commercialization Pathway</h2>
-###Phase 1: Core Enterprise Features
+<h3>Phase 1: Core Enterprise Features</h3>
 MySQL InnoDB Cluster – Replace single-instance MySQL with a high-availability cluster using Group Replication and MySQL Router for automatic failover and read/write splitting.
 
 Automated Backups – Schedule full and incremental backups using Percona XtraBackup with S3 object storage retention.
@@ -176,7 +176,7 @@ Add reason Column to removal_logs – Distinguish between mentor-initiated drops
 
 Soft Deletes – Add is_active or deleted_at to key tables (students, sections, teachers) to preserve historical data and allow recovery of accidentally removed records.
 
-###Phase 2: Advanced Features
+<h3>hase 2: Advanced Features</h3>
 Ratings & Reviews System – Allow learners to rate completed sections and display average ratings in the advising portal to guide future students.
 
 Achievements & Gamification – Award badges like "Top Performer", "Skill Master", and "Community Leader" based on student activity and completions.
@@ -195,7 +195,7 @@ Export Functionality – Allow teachers and admins to export student rosters and
 
 Bulk Operations – Enable teachers to drop multiple students or graduate all eligible students with a single action.
 
-###Phase 3: Scalability & Enterprise Expansion
+<h3>Phase 3: Scalability & Enterprise Expansion</h3>
 Multi-Institution Support – Add an institutions table to support multiple universities or campuses with isolated data, separate administrators, and custom branding.
 
 RESTful API Development – Build a RESTful API using PHP for mobile app development, third-party integrations, and external analytics tools.
@@ -217,17 +217,17 @@ Disaster Recovery (DR) – Deploy InnoDB ClusterSet with primary and replica clu
 Elasticsearch Integration – Replace basic SQL search with Elasticsearch for fuzzy matching, autocomplete, and advanced search capabilities.
 
 <h2>📊 Monetization Strategy</h2>
-Commission per Enrollment – Percentage of revenue from paid course enrollments.
+- Commission per Enrollment – Percentage of revenue from paid course enrollments.
 
-SaaS Subscription Plans – Monthly/yearly fees for institutions (Free, Pro, Enterprise tiers).
+- SaaS Subscription Plans – Monthly/yearly fees for institutions (Free, Pro, Enterprise tiers).
 
-Premium Feature Add-ons – Advanced analytics, integrations, and custom branding.
+- Premium Feature Add-ons – Advanced analytics, integrations, and custom branding.
 
-Certificate Verification Fees – One-time fees for official certificate verification and printing.
+- Certificate Verification Fees – One-time fees for official certificate verification and printing.
 
-White-label Licensing – One-time licensing fee for custom-branded deployments.
+- White-label Licensing – One-time licensing fee for custom-branded deployments.
 
-API Access – Monthly fees for third-party API access and integrations.
+- API Access – Monthly fees for third-party API access and integrations.
 
 <h2>📈 Market Expansion Roadmap</h2>
 - Phase 1 – Pilot deployment on 1 campus with 500 users; core enterprise features implemented.
@@ -236,7 +236,7 @@ API Access – Monthly fees for third-party API access and integrations.
 
 - Phase 3 – National expansion to 25 campuses with 15,000 users; AI-driven analytics and gamification enabled.
 
-Phase 4 – Global market entry with 100+ campuses and 100,000+ users; multi-language and multi-currency support.
+- Phase 4 – Global market entry with 100+ campuses and 100,000+ users; multi-language and multi-currency support.
 
 
 
