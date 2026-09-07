@@ -60,8 +60,8 @@ In addition to the database design, a fully functional website, ‘HustleUp,’ 
 
 hustleup/
 - src/
-  - db.php # Database connection & helper functions
-  - index.php # Main application entry point (UI + Logic)│
+  - db.php: Database connection & helper functions
+  - index.php: Main application entry point (UI + Logic)│
 - sql/
   - 01_create_tables.sql: Table creation scripts
   - 02_insert_data.sql: Sample data insertion
@@ -69,29 +69,29 @@ hustleup/
   - 04_user_privileges.sql: User & privilege creation
 
 <h2>📋 Relational Schema</h2>
-students ( campus_id, name, city, department, cgpa, semester, password_hash )  
 
-courses ( course_id, course_name )  
+- students ( campus_id, name, city, department, cgpa, semester, password_hash )  
 
-teachers ( teacher_id, campus_id, name, teaching_skill, semester, contact_number, qualification )  
+- courses ( course_id, course_name )  
 
-campus_id → students (campus_id)  
+- teachers ( teacher_id, campus_id, name, teaching_skill, semester, contact_number, qualification )  
+  - campus_id → students (campus_id)  
 
-sections ( section_id, section_name, course_id, teacher_campus_id, schedule_time, estimated_learning_days, number_of_projects )  
-course_id → courses (course_id)  
-teacher_campus_id → teachers (campus_id)  
+- sections ( section_id, section_name, course_id, teacher_campus_id, schedule_time, estimated_learning_days, number_of_projects )  
+  - course_id → courses (course_id)  
+  - teacher_campus_id → teachers (campus_id)  
 
-registrations ( registration_id, student_campus_id, section_id )  
-student_campus_id → students (campus_id)  
-section_id → sections (section_id)  
+- registrations ( registration_id, student_campus_id, section_id )  
+  - student_campus_id → students (campus_id)  
+  - section_id → sections (section_id)  
 
-completed_courses ( completion_id, student_campus_id, section_id, skill_learnt, completion_date )  
-student_campus_id → students (campus_id)  
-section_id → sections (section_id)  
+- completed_courses ( completion_id, student_campus_id, section_id, skill_learnt, completion_date )  
+  - student_campus_id → students (campus_id)  
+  - section_id → sections (section_id)  
 
-removal_logs ( log_id, student_campus_id, section_id, removed_at )  
-student_campus_id → students (campus_id)  
-section_id → sections (section_id)  
+- removal_logs ( log_id, student_campus_id, section_id, removed_at )  
+  - student_campus_id → students (campus_id)  
+  - section_id → sections (section_id)  
 
 
 <h2>📊 Normalization Status</h2>
