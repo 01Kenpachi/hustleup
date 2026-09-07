@@ -1,14 +1,14 @@
-HustleUp ⚡- A Campus Skill-Sharing and Peer-Mentorship Platform
+<h1>HustleUp⚡</h1>
 
 A peer-to-peer skill-sharing platform for university students. Students learn skills from certified mentors, enroll in sections, and earn certificates upon completion.
 
-📖 Project Overview
+<h2>📖 Project Overview</h2>
 
 A comprehensive data-driven web application was developed and implemented utilizing a seven table MySQL database. Six tables adhere to third normal form, while one table intentionally  deviates from this standard (completed_courses.skill_learnt). The schema enforces declarative  integrity through primary keys, foreign keys, composite UNIQUE keys to prevent duplicate  enrollments and section names, as well as CHECK constraints. The SQL implementation covers  the entire course syllabus, incorporating joins across three and four tables, an outer join for 
 counting active sections, all five aggregate functions with conditional aggregation, GROUP BY  with HAVING, single-row and multiple-row subqueries, a view supporting two dashboards, and  a trigger that maintains an independent audit trail. The front end enables insertion, modification,  deletion, search, and filtering, with all parameterized queries executed as prepared statements to  enhance security. 
 In addition to the database design, a fully functional website, ‘HustleUp,’ was developed and  deployed on a live remote server using Always Data hosting. The website is accessible online  and available for immediate use by students and teachers. Core features such as user registration,  login, role-based access, section creation, enrollment, graduation, and student removal are fully  operational. The user interface is designed to be clean and responsive, ensuring a proper platform  for both learners and mentors. This project demonstrates theoretical knowledge of databases and  practical web development skills, resulting in a deployable, real-world project.
 
-✨ Core Features
+<h2>✨ Core Features</h2>
 
  Authentication & Authorization
 - Secure user registration with **password hashing** (bcrypt)
@@ -39,7 +39,7 @@ Dashboards
 | **Trending Skills** | Top 5 skills by enrollment |
 | **CGPA Snapshot** | Average, highest, and lowest CGPA |
 
-🛠️ Technical Architecture
+<h2>🛠️ Technical Architecture</h2>
 
 | Layer | Technology |
 | :--- | :--- |
@@ -51,7 +51,7 @@ Dashboards
 | **Hosting (Live Deployment)** | [https://www.alwaysdata.com](https://www.alwaysdata.com) |
 
 
-📁 Project Structure
+<h2>📁 Project Structure</h2>
 hustleup/
 │
 ├── src/
@@ -64,7 +64,7 @@ hustleup/
 │ ├── 03_create_views.sql # View creation
 │ ├── 04_user_privileges.sql # User & privilege creation
 
-📋 Relational Schema
+<h2>📋 Relational Schema</h2>
 students ( campus_id, name, city, department, cgpa, semester, password_hash )
 
 courses ( course_id, course_name )
@@ -89,7 +89,7 @@ student_campus_id → students (campus_id)
 section_id → sections (section_id)
 
 
-📊 Normalization Status
+<h2>📊 Normalization Status</h2>
 
 | Table | Normal Form | Justification |
 | :--- | :--- | :--- |
@@ -102,9 +102,9 @@ section_id → sections (section_id)
 | `completed_courses` | **Denormalized (3NF Violation)** | The attribute `skill_learnt` is deliberately denormalized to preserve a historical snapshot of the skill name at the time of graduation. If the course is later renamed in the `courses` table, the certificate should still show the original name. The fully normalized alternative would require joining `completed_courses` with `sections` and `courses` at query time, which would lose the historical accuracy of the certificate. |
 
 
-🚀 Getting Started
+<h2>🚀 Getting Started</h2>
 
-### Prerequisites
+Prerequisites
 
 - PHP 7.4 or higher (with MySQLi extension enabled)
 - MySQL 5.7 or higher
@@ -112,13 +112,14 @@ section_id → sections (section_id)
 - Git (for cloning)
 
 
-### Installation & Setup
+Installation & Setup
 
-#### Step 1: Clone the repository
+Step 1: Clone the repository
 
 ```bash
 git clone https://github.com/your-username/hustleup.git
 cd hustleup
+```
 Step 2: Set up the database
 Start XAMPP and enable Apache and MySQL.
 
@@ -148,7 +149,7 @@ Open your browser and visit: http://localhost/hustleup/index.php
 
 Step 5: Login with demo credentials
 
-💼 Commercialization Pathway
+<h2>💼 Commercialization Pathway</h2>
 Phase 1: Core Enterprise Features
 MySQL InnoDB Cluster – Replace single-instance MySQL with a high-availability cluster using Group Replication and MySQL Router for automatic failover and read/write splitting.
 
@@ -214,7 +215,7 @@ Disaster Recovery (DR) – Deploy InnoDB ClusterSet with primary and replica clu
 
 Elasticsearch Integration – Replace basic SQL search with Elasticsearch for fuzzy matching, autocomplete, and advanced search capabilities.
 
-📊 Monetization Strategy
+<h2>📊 Monetization Strategy</h2>
 Commission per Enrollment – Percentage of revenue from paid course enrollments.
 
 SaaS Subscription Plans – Monthly/yearly fees for institutions (Free, Pro, Enterprise tiers).
@@ -227,7 +228,7 @@ White-label Licensing – One-time licensing fee for custom-branded deployments.
 
 API Access – Monthly fees for third-party API access and integrations.
 
-📈 Market Expansion Roadmap
+<h2>📈 Market Expansion Roadmap</h2>
 Phase 1 – Pilot deployment on 1 campus with 500 users; core enterprise features implemented.
 
 Phase 2 – Campus rollout to 5 campuses with 2,500 users; mobile app and API launched.
